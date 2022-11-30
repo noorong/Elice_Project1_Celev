@@ -39,7 +39,7 @@ const ref = {
   categoryTag: document.querySelector(".tag_category"),
   descriptionTag: document.querySelector(".tag_name"),
   priceTag: document.querySelector(".total_price"),
-  reviewListTag: document.querySelector(".bb17")
+  reviewSection: document.querySelector(".section"),
 };
 
 let product = {};
@@ -120,20 +120,21 @@ const drawProduct = async () => {
     const review_email = review.userId;
     const review_content = review.review;
 
-    ref.reviewListTag.insertAdjacentHTML(
+    ref.reviewSection.insertAdjacentHTML(
       "beforeend",
       `
-        <tr>
-          <th>번호: ${review_no}</th>
-          <th>이메일: ${review_email}</th>
-          <br>
-          <th>후기: ${review_content}</th>
-          <br>
-        </tr>
-        <br>
+      <div class="review_box">
+        <p>이메일: ${review_email}</p>
+        <div>
+         <p>
+         후기
+         </p>
+         <p>${review_content}</p>
+        </div>
+      </div>
       `
-    )
-  })
+    );
+  });
 
   // const data = {
   //   num,
@@ -169,14 +170,14 @@ const addCart = (id) => {
 ref.cartButtonTag.addEventListener("click", addCart);
 
 //주문 바로하기
-const buyNow =() =>{
+const buyNow = () => {
   localStorage.removeItem("buyNowProducts");
   const products = JSON.parse(localStorage.getItem("buyNowProducts")) || [];
-    products.push(product);
-    localStorage.setItem("buyNowProducts", JSON.stringify(products));
-    alert("구매페이지로 이동합니다.");
-  }
-ref.buyButttonTag.addEventListener('click', buyNow);
+  products.push(product);
+  localStorage.setItem("buyNowProducts", JSON.stringify(products));
+  alert("구매페이지로 이동합니다.");
+};
+ref.buyButttonTag.addEventListener("click", buyNow);
 //함수 실행
 const render = () => {
   drawProduct();
@@ -193,7 +194,10 @@ const initialize = async () => {
 };
 
 initialize().then(() => render());
-ref.buyButttonTag.addEventListener("click", () => (location.href = `/order_now`));
+ref.buyButttonTag.addEventListener(
+  "click",
+  () => (location.href = `/order_now`)
+);
 
 // Header&Footer
 const body = document.querySelector(".body");
