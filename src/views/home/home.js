@@ -30,14 +30,16 @@ async function insertProductElement() {
       <p class="pd_brd" id="${brand}">${brand}</p>
       <p class="pd_name" id="${name}">${name}</p>
       <div class="tag_box">
+      <div>
         <a class="tag_category">${category}</a>
         <a class="tag_name" id="${description}">${description}</a>
-        <div class="tag_like">
-          <img class="like_src" src="../image/like.png" alt="" width="30px" id="like_${num}">
-        </div>
       </div>
-      <p class="like_count" id="likeCount_${num}">${like}</p>
       <p class="pd_price">${price} 원</p>
+      </div>
+      <div class="tag_like">
+          <img class="like_src" src="../image/like.png" alt="" width="30px" id="like_${num}"> 
+          <p class="like_count" id="likeCount_${num}">${like}</p>
+      </div>
     </article>
   </section>
     `

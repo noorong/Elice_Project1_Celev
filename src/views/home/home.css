@@ -21,6 +21,9 @@
   width: 300px;
   height: 510px;
   margin: auto;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px 1px lightgrey;
 }
 
 .pd_block img {
@@ -28,8 +31,9 @@
   height: 300px;
 }
 
-.pd_text {
-  padding-left: 5px;
+.pd_block .pd_text {
+  margin-top: 15px;
+  padding: 0 10px;
 }
 
 .box {
@@ -42,43 +46,60 @@
 
 
 .pd_brd {
-  /* position: absolute; */
-
   font-family: "Gothic";
   font-style: Bold;
   font-weight: 800;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 18px;
   /* identical to box height */
 
   text-decoration-line: underline;
 
-  color: #000000;
 }
 
 .pd_name {
-  /* position: absolute; */
-
   font-family: "Gothic A1";
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 18px;
 
-  color: #000000;
+  margin-top: 5px;
+}
 
-  margin-top: 2px;
+.pd_block .pd_text .tag_like {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  margin-top: 30px;
+}
+
+.like_count{
+  color: #999;
+  margin-top: 3px;
+}
+
+.tag_like > img {
+  width: 50px;
+  height: auto;
+  cursor: pointer;
 }
 
 .tag_box {
-  margin-top: 15px;
+  margin-top: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
 }
 
 .tag_category {
-  border: 4px;
   padding: 5px;
   border-radius: 4px;
-  color: #000000;
   background: rgb(219, 219, 219);
 
   font-family: "Gothic";
@@ -86,42 +107,19 @@
 }
 
 .tag_name {
-  border: 4px;
   padding: 5px;
   border-radius: 4px;
-  color: #000000;
   background: rgb(184, 211, 227);
 
   font-family: "Gothic";
   font-weight: 600;
 }
 
-.tag_like {
-  float: right;
-}
-
-.like_count{
-  color: #999;
-  margin-top: 15px;
-}
-
-.tag_like > img {
-  height: 30px;
-  width: 30px;
-  cursor: pointer;
-}
-
 .pd_price {
-  /* position: absolute; */
   font-family: "Gothic";
-  /* font-style: Bold; */
   font-weight: 900;
   font-size: 17px;
   line-height: 21px;
-
-  margin: 15px 5px 0 0;
-
-  float: right;
 
   color: #000000;
 }
@@ -144,10 +142,16 @@
   width: 56px;
 
   border-radius: 10px;
-  background: #d9d9d9;
+  background: rgba(184, 211, 227, 0.3);
+  box-shadow: 3px 3px 10px 1px lightgrey;
 
   margin-bottom: 15px;
   cursor: pointer;
+}
+
+.body .category .category_btn:hover{
+  background: rgb(66, 138, 231);
+  transition: 1s ease;
 }
 
 .body .category .category_btn + p {
