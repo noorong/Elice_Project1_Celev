@@ -1,8 +1,3 @@
-import header from "./header";
-import footer from "./footer";
-header();
-footer();
-
 const searchBtn = header.querySelector(".searchBtn");
 const searchBar = header.querySelector(".header_search");
 
