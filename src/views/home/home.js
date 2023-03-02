@@ -1,5 +1,5 @@
-import * as Api from "/api.js";
-import { checkLogin } from "../useful-functions.js";
+import * as Api from "../api";
+import { checkLogin } from "../useful-functions";
 const productList = document.querySelector(".section_box");
 const token = sessionStorage.getItem("token");
 
@@ -19,8 +19,7 @@ async function insertProductElement() {
     const description = product.description;
     const num = product.num;
     const like = product.like;
-   
-    
+
     productList.insertAdjacentHTML(
       "beforeend",
       `
@@ -44,7 +43,7 @@ async function insertProductElement() {
   </section>
     `
     );
-  
+
     const productItem = document.getElementById(`${num}`);
     const likeBtn = document.getElementById(`like_${num}`);
     const likeCount = document.getElementById(`likeCount_${num}`);
@@ -55,7 +54,6 @@ async function insertProductElement() {
       window.location.assign(`/productDetail/${num}`);
     }
     async function toggle(e) {
-
       e.preventDefault();
       if (likeBtn.src.split("/")[4] === "like.png") {
         countIncrease(e);
