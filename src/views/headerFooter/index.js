@@ -1,0 +1,10 @@
+import header from "./header";
+import changeHeader from "./changeHeader";
+import footer from "./footer";
+import logout from "./logout";
+import serching from "./searching";
+header();
+footer();
+changeHeader();
+serching();
+logout();
